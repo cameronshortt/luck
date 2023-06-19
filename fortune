@@ -1,2 +1,2 @@
 #!/bin/sh
-luck -f /usr/local/lib/fortune/*
+luck -f /usr/local/games/fortune/*
