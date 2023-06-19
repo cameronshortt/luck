@@ -4,7 +4,7 @@ build:
 install: build
 	mkdir /usr/local/bin
 	mv luck /usr/local/bin/luck
-        chmod 755 fortune
+	chmod 755 fortune
 	mkdir /usr/local/games/fortune
 	cp fortune /usr/local/bin/fortune
 	cp files/* /usr/local/games/fortune/
