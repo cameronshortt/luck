@@ -1,0 +1,2 @@
+#!/bin/sh
+luck -f /usr/local/lib/fortune/*

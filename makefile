@@ -4,6 +4,8 @@ build:
 install: build
 	mkdir /usr/local/bin
 	mv luck /usr/local/bin/luck
+        chmod 755 fortune
+	mkdir /usr/local/lib/fortune
 	mv fortune /usr/local/bin/fortune
 
 uninstall:
