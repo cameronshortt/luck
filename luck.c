@@ -95,7 +95,7 @@ char **v;
             nl=0;
 
             delim=realloc (delim,3);
-            strcpy (delim,"%%\n");
+            strcpy (delim,"%\n");
 
             break;
           default:
