@@ -20,6 +20,24 @@ usage (n)
   die (n,"usage: luck [-n] [-d delim] [files]\n");
 }
 
+#define NBUF 4096
+
+static char buf[NBUF];
+static int count=0;
+
+static
+next (fd,cbuf)
+char *cbuf;
+{
+  if (!count)
+    count=read (fd,buf,NBUF);
+  if (!count)
+    return (0);
+  *cbuf=buf[NBUF-count--];
+  return (1);
+}
+
+static
 rd (fd,dst,end)
 char *dst,*end;
 {
@@ -28,7 +46,7 @@ char *dst,*end;
 
   r=i=0;
 
-  while (i<strlen (end) && (s=read (fd,&c,1))) {
+  while (i<strlen (end) && (s=next (fd,&c))) {
     r += s;
 
 check:
